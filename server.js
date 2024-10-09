@@ -54,7 +54,9 @@ app.post('/api/join-waitlist', async (req, res) => {
 app.get('/api/health-check', (req, res) => {
   res.status(200).json({ message: 'Alright, everything is good!' });
 });
-
+app.get('/', (req, res) => {
+    res.status(200).json({ message: 'Alright, everything is good!' });
+  });
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
