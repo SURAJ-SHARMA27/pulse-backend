@@ -10,14 +10,15 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const jwt = require('jsonwebtoken');          
-const JWT_SECRET = 'your_jwt_secret'; 
+require('dotenv').config(); 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://surajrace21:VCD6JP1xl1PTSErK@users.4hdqv.mongodb.net/?retryWrites=true&w=majority&appName=users', {
+mongoose.connect(process.env.MONGO_URI, {
 })
 .then(() => {
   console.log('MongoDB connected successfully');
@@ -39,8 +40,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // true for port 465, false for other ports
   auth: {
-    user: "surajofficial2704@gmail.com",
-    pass: "pddqjfbqkhyjkcts",
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 app.post("/forgetpassword", async (req, res) => {
