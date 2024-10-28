@@ -63,16 +63,16 @@ console.log(email,"here is email")
       from: '"Vibe AI support" <surajofficial2704@gmail.com>', // sender address
       to: email, // receiver address
       subject: "Password Reset", // Subject line
-      text: `Click the link to reset your password: http://localhost:3000/forgotpassword/${resetToken}`, // plain text body
+      text: `Click the link to reset your password: https://vibe-ai.netlify.app/forgotpassword/${resetToken}`, // plain text body
       html: `
       <div style="font-family: Arial, sans-serif; color: #333;">
         <h3>Hello,</h3>
         <p>We received a request to reset your password. Click the link below to reset it:</p>
-        <a href="http://localhost:3000/forgotpassword/${resetToken}" style="color: #3B30C8; text-decoration: none;">
+        <a href="https://vibe-ai.netlify.app/forgotpassword/${resetToken}" style="color: #3B30C8; text-decoration: none;">
           <strong>Reset Your Password</strong>
         </a>
         <p>If you didn't request this, please ignore this email.</p>
-        <p>Best regards,<br>AI Support Team</p>
+        <p>Best regards,<br>Vibe AI Support Team</p>
       </div>
     `,    });
 
